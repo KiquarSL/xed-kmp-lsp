@@ -4,8 +4,7 @@ This extension adds Kotlin and Java LSP
 
 [kmp-lsp](https://github.com/Hessesian/kmp-lsp.git) - Fast, low-memory LSP server for Kotlin and Java, written in Rust.
 
-
-Final memory usage: ~10MB
+Total memory usage: ~10MB
 
 ### Installation
 
