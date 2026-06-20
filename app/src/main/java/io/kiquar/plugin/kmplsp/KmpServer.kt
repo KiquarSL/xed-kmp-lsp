@@ -33,7 +33,7 @@ class KmpServer(
         if (!isTerminalInstalled()) {
             return false
         }
-        return sandboxHomeDir().child(".lsp/kmp-lsp/kmp-lsp")
+        return sandboxHomeDir().child(".lsp/kmp-lsp/kmp-lsp").exists()
     }
 
     override fun install(activity: Activity) {
