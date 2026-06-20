@@ -2,7 +2,7 @@
   "$schema": "schema/schema.json",
   "id": "io.kiquar.plugin.kmplsp",
   "name": "kmp-lsp",
-  "mainClass": "io.kiquar.kmplsp.kmplsp.Main",
+  "mainClass": "io.kiquar.plugin.kmplsp.Main",
   "version": "0.1.0",
   "description": "Extension that provides kmp-lsp",
   "author": {
