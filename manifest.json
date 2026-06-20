@@ -1,0 +1,17 @@
+{
+  "$schema": "schema/schema.json",
+  "id": "io.kiquar.plugin.kmplsp",
+  "name": "kmp-lsp",
+  "mainClass": "io.kiquar.plugin.kotlin.Main",
+  "version": "0.1.0",
+  "description": "Extension that provides kmp-lsp",
+  "author": {
+    "displayName": "KiquarSL",
+	"github": "KiquarSL"
+  },
+  "license": "MIT",
+  "tags": ["kotlin", "java", "lsp", "kmp-lsp"],
+  "minAppVersion": 95,
+  "maxAppVersion": 95,
+  "repository": "https://github.com/KiquarSL/xed-kmp-lsp"
+}
