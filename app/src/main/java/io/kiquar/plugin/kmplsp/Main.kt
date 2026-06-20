@@ -19,7 +19,6 @@ class Main(context: ExtensionContext) : ExtensionAPI(context) {
     private var kmpServer: KmpServer? = null
 
     override fun onInstalled() {
-
     }
 
     override fun onExtensionLoaded() {

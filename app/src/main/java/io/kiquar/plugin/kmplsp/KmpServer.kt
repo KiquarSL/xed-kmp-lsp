@@ -17,7 +17,7 @@ import com.rk.extension.ExtensionContext
 
 class KmpServer(
     override val icon: Icon? = BuiltinFileType.KOTLIN.icon,
-    override val supportedExtensions: List<String> = listOf("kt", "java"),
+    override val supportedExtensions: List<String> = listOf("kt", "java", "swift"),
     override val installScript: File,
 	val context: ExtensionContext,
 ) : ScriptedLspServer() {

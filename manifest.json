@@ -10,7 +10,7 @@
 	"github": "KiquarSL"
   },
   "license": "MIT",
-  "tags": ["kotlin", "java", "lsp", "kmp-lsp"],
+  "tags": ["kotlin", "java", "swift", "lsp", "kmp-lsp"],
   "minAppVersion": 95,
   "maxAppVersion": 95,
   "repository": "https://github.com/KiquarSL/xed-kmp-lsp"

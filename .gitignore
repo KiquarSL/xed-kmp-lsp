@@ -11,3 +11,4 @@ app/libs/sdk.jar
 build
 captures
 local.properties
+workspace.json

@@ -1,34 +1,48 @@
 # kmp-lsp Extension
 
-This extension adds Kotlin and Java LSP
+Adds Kotlin and Java LSP support using [kmp-lsp](https://github.com/Hessesian/kmp-lsp) — fast, low-memory LSP server written in Rust (~10MB).
 
-[kmp-lsp](https://github.com/Hessesian/kmp-lsp.git) - Fast, low-memory LSP server for Kotlin and Java, written in Rust.
+## Installation
 
-Total memory usage: ~10MB
+Install via Xed-Editor's extension marketplace or from a ZIP file (Settings > Extensions > Install from storage).
 
-### Installation
+After installation, go to **Settings > Editor > Language servers > Kotlin > Install** to set up the LSP.
 
-Install the extension through the Xed-Editor's extension marketplace, and you're ready to go! Alternatively, you can download the latest release ZIP file and install it via Settings > Extensions > Install from storage.
-
-After install extension install kotlin and lsp in Settings > Editor > Language servers > Kotlin > Install
-
-Check installed:
+Verify:
 ```bash
 kmp-lsp --help
 ```
 
-## Build
+## Usage
 
-Debug build:
+Basic LSP works immediately. For full navigation (go-to-definition, references, hover docs):
+
 ```bash
-./gradlew assembleDebug
-./gradlew :app:createFinalZip
+# Index the project
+kmp-lsp index --root . --verbose
+
+# Extract library sources (Gradle projects)
+kmp-lsp extract-sources
+
+# For local JARs (app/libs/*.jar), create workspace.json:
+# { "jarPaths": ["<WORKSPACE>/app/libs"] }
+
+# Verify sources
+kmp-lsp sources --root . --json
 ```
 
-Release build:
+CLI commands:
+
 ```bash
-./gradlew assembleRelease
-./gradlew :app:createFinalZip
+kmp-lsp find MyClass
+kmp-lsp refs MyClass
+kmp-lsp hover src/Foo.kt 42 10
 ```
 
-Or use files `./compileDebug` or `./compileRelease`
+Build
+
+```bash
+./gradlew assembleDebug && ./gradlew :app:createFinalZip
+# or release
+./gradlew assembleRelease && ./gradlew :app:createFinalZip
+```
