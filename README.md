@@ -15,7 +15,7 @@ kmp-lsp --help
 
 ## Usage
 
-Basic LSP works immediately. For full navigation (go-to-definition, references, hover docs):
+Basic LSP works immediately
 
 ```bash
 # Index the project

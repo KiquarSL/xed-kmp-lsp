@@ -206,4 +206,4 @@ tasks.register<Zip>("createFinalZip") {
     from(changelogFile) { into("") }
 
     destinationDirectory.set(File(rootDir, "output"))
-}
+})
