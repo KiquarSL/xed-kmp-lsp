@@ -3,7 +3,7 @@
   "id": "io.kiquar.plugin.kmplsp",
   "name": "kmp-lsp",
   "mainClass": "io.kiquar.plugin.kmplsp.Main",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Extension that provides kmp-lsp",
   "author": {
     "displayName": "KiquarSL",
