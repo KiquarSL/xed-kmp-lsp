@@ -14,11 +14,11 @@ import java.io.File
 
 @Keep
 @Suppress("unused")
-class Main(context: ExtensionContext, activity: Activity) : ExtensionAPI(context, activity) {
+class Main(context: ExtensionContext) : ExtensionAPI(context) {
     
     private var kmpServer: KmpServer? = null
     
-    override fun onInstalled() {
+    override fun onInstalled(activity: Activity) {
         loadServer()
         kmpServer?.install()
     }
