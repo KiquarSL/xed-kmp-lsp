@@ -35,6 +35,8 @@ class KmpServer(
         }
         return sandboxHomeDir().child(".lsp/kmp-lsp/kmp-lsp").exists()
     }
+	
+	override fun onUpdated() {}
 
     override fun install(activity: Activity) {
         launchInstaller(activity, kotlinLspVersion)
@@ -48,7 +50,7 @@ class KmpServer(
         launchInstaller(activity, "--update")
     }
 
-    override suspend fun isUpdatable(context: Context): Boolean {
+    override suspend fun hasUpdate(context: Context): Boolean {
         val versionFile = sandboxHomeDir().child(".lsp/kmp-lsp/version.txt")
         val currentVersionText = runCatching { versionFile.readText().trim() }.getOrNull() ?: return false
         return currentVersionText != kotlinLspVersion
