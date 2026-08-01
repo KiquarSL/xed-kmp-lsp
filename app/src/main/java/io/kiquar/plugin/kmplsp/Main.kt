@@ -1,6 +1,7 @@
 package io.kiquar.plugin.kmplsp
 
 import androidx.annotation.Keep
+import android.app.Activity
 import com.rk.extension.ExtensionAPI
 import com.rk.extension.ExtensionContext
 import com.rk.utils.toast
@@ -13,7 +14,7 @@ import java.io.File
 
 @Keep
 @Suppress("unused")
-class Main(context: ExtensionContext) : ExtensionAPI(context) {
+class Main(context: ExtensionContext, activity: Activity) : ExtensionAPI(context) {
 	
 	private var kmpServer: KmpServer? = null
 	
