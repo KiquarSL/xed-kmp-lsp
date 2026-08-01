@@ -1,4 +1,4 @@
-name: Extension Compile Test
+name: Extension Compile
 
 on:
   push:
