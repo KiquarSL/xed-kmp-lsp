@@ -12,7 +12,7 @@ import com.rk.lsp.ScriptedLspServer
 import java.io.File
 import com.rk.exec.launchTerminal
 import com.rk.exec.TerminalCommand
-import com.rk.activities.main.MainActivity
+import com.rk.activities.main.MainActivity 
 import com.rk.extension.ExtensionContext
 
 class KmpServer(

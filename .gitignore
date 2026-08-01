@@ -1,6 +1,5 @@
 **/build/**
 output/**
-app/libs/sdk.jar
 *.iml
 .gradle
 /local.properties

@@ -7,17 +7,13 @@ import com.rk.lsp.LspRegistry
 import com.rk.utils.getTempDir
 import com.rk.file.child
 import java.io.File
+import com.rk.activities.main.MainActivity 
 
 @Keep
 @Suppress("unused")
 class Main(context: ExtensionContext) : ExtensionAPI(context) {
     
     private var kmpServer: KmpServer? = null
-    
-    override fun onInstalled() {
-        loadServer()
-        kmpServer?.install()
-    }
     
     override fun onLoad() {
         loadServer()
