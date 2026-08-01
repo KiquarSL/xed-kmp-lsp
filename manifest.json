@@ -1,0 +1,14 @@
+{
+  "$schema": "schema\/schema.json",
+  "id": "io.kiquar.plugin.kmplsp",
+  "name": "KMP-LSP",
+  "mainClass": "io.kiquar.plugin.kmplsp.Main",
+  "version": "0.2.0",
+  "description": "Added kmp-lsp",
+  "author": {
+    "displayName": "KiquarSL",
+    "github": "KiquarSL"
+  },
+  "minAppVersion": 95,
+  "repository": "https:\/\/github.com\/KiquarSL\/xed-kmp-lsp"
+}
