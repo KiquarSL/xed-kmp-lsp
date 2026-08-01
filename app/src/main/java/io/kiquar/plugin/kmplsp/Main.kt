@@ -1,15 +1,11 @@
 package io.kiquar.plugin.kmplsp
 
 import androidx.annotation.Keep
-import android.app.Activity
 import com.rk.extension.ExtensionAPI
 import com.rk.extension.ExtensionContext
-import com.rk.utils.toast
 import com.rk.lsp.LspRegistry
 import com.rk.utils.getTempDir
 import com.rk.file.child
-import kotlinx.coroutines.runBlocking
-import kotlin.io.writeText
 import java.io.File
 
 @Keep
@@ -18,7 +14,7 @@ class Main(context: ExtensionContext) : ExtensionAPI(context) {
     
     private var kmpServer: KmpServer? = null
     
-    override fun onInstalled(activity: Activity) {
+    override fun onInstalled() {
         loadServer()
         kmpServer?.install()
     }
@@ -30,8 +26,6 @@ class Main(context: ExtensionContext) : ExtensionAPI(context) {
     override fun onDispose() {
         dispose()
     }
-    
-    // Local functions 
     
     private fun acquireLspInstallScript(): File {
         val assetStream = context.assets.open("install-kmp-lsp.sh")
@@ -46,10 +40,12 @@ class Main(context: ExtensionContext) : ExtensionAPI(context) {
     private fun dispose() {
         kmpServer?.let {
             LspRegistry.unregisterServer(it)
+            kmpServer = null
         }
     }
     
     private fun loadServer() {
+        dispose()
         kmpServer = KmpServer(
             installScript = acquireLspInstallScript(),
             context = context
