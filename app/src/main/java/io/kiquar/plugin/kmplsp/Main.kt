@@ -30,10 +30,6 @@ class Main(context: ExtensionContext) : ExtensionAPI(context) {
 		dispose()
     }
 	
-	override fun onUpdated() {
-        dispose()
-    }
-	
 	// Local functions 
 	
 	private fun acquireLspInstallScript(): File {

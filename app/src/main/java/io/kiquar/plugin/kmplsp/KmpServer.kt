@@ -35,8 +35,6 @@ class KmpServer(
         }
         return sandboxHomeDir().child(".lsp/kmp-lsp/kmp-lsp").exists()
     }
-	
-	override fun onUpdated() {}
 
     override fun install(activity: Activity) {
         launchInstaller(activity, kotlinLspVersion)
