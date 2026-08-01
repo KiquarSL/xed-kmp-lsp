@@ -14,26 +14,26 @@ import java.io.File
 
 @Keep
 @Suppress("unused")
-class Main(context: ExtensionContext, activity: Activity) : ExtensionAPI(context) {
-	
-	private var kmpServer: KmpServer? = null
-	
-	override fun onInstalled() {
-		loadServer()
-		kmpServer?.install()
+class Main(context: ExtensionContext, activity: Activity) : ExtensionAPI(context, activity) {
+    
+    private var kmpServer: KmpServer? = null
+    
+    override fun onInstalled() {
+        loadServer()
+        kmpServer?.install()
     }
-	
+    
     override fun onLoad() {
-		loadServer()
+        loadServer()
     }
 
     override fun onDispose() {
-		dispose()
+        dispose()
     }
-	
-	// Local functions 
-	
-	private fun acquireLspInstallScript(): File {
+    
+    // Local functions 
+    
+    private fun acquireLspInstallScript(): File {
         val assetStream = context.assets.open("install-kmp-lsp.sh")
         val assetContent = assetStream.bufferedReader().use { it.readText() }
         val scriptFile = getTempDir().child("install-kmp-lsp.sh").also {
@@ -42,19 +42,19 @@ class Main(context: ExtensionContext, activity: Activity) : ExtensionAPI(context
         }
         return scriptFile
     }
-	
-	private fun dispose() {
+    
+    private fun dispose() {
         kmpServer?.let {
             LspRegistry.unregisterServer(it)
         }
     }
-	
-	private fun loadServer() {
-		kmpServer = KmpServer(
+    
+    private fun loadServer() {
+        kmpServer = KmpServer(
             installScript = acquireLspInstallScript(),
-			context = context
+            context = context
         ).also {
             LspRegistry.registerServer(it)
         }
-	}
+    }
 }
